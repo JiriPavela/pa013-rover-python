@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mars-rover"
+version = "0.1"
+dependencies = [
+    "mypy",
+    "mypy-extensions",
+    "pylint",
+    "pytest",
+    "coverage",
+    "tox"
+]
+requires-python = ">=3.10"
+authors = [
+  {name = "Jiri Pavela"},
+]
+description = "Mars Rover Controller"
+
+[project.scripts]
+rover = "rover.rover:run"
+
+[tool.coverage.report]
+skip_empty = true
+omit = [
+  "tests/*"
+]
+exclude_also = [
+  "if TYPE_CHECKING:",
+]
